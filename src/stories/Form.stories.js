@@ -1,6 +1,4 @@
-import { within, userEvent } from '@storybook/testing-library';
-
-import MyForm from './Form';
+import MyForm from './Form.vue';
 
 export default {
     title: 'Example/Form',
@@ -13,15 +11,9 @@ export default {
 
 const Template = () => ({
     components: { MyForm },
-    template: '<my-form />',
+    template: '<Form-Tamu />',
 });
 
-export const LoggedOut = Template.bind({});
+export const form = Template.bind({});
 
 // More on interaction testing: https://storybook.js.org/docs/vue/writing-tests/interaction-testing
-export const LoggedIn = Template.bind({});
-LoggedIn.play = async({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const loginButton = await canvas.getByRole('button', { name: /Log in/i });
-    await userEvent.click(loginButton);
-};

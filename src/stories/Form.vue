@@ -301,7 +301,7 @@
 
 <script>
 
-
+import './form.css'
 
 export default {
     name: "Form-Tamu",
